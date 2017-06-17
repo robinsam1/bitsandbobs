@@ -4,8 +4,18 @@
     <h1>Enter how many km you drive in a day</h1>
     <h2>(you will be given a carbon footprint)</h2>
     <form action="." method="POST">
-        <input type="text" name="text">
-        <input type="submit" name="my-form" value="Send">
+        <b>Driving distance</b> (km):
+	<input type="text" name="driving">
+	<br />
+        <b>Diet type</b>: 
+	<select name="diet">
+		<option value="meat">Meat eater</option>
+		<option value="white">White meat eater</option>
+		<option value="vegetarian">Vegetarian</option>
+		<option value="vegan">Vegan</option>
+	</select>
+        <br />
+	<input type="submit" name="my-form" value="Send">
     </form>
 </body>
 </html>

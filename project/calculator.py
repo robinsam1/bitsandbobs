@@ -6,5 +6,5 @@ class calculator(object):
 		score = 10.0
 		#for answer in answers:
 		#	score+=answer
-		score+=(float(answers) * .250)
+		score+=(float(answers["driving"]) * .250)
 		return score

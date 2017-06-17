@@ -9,10 +9,11 @@ def my_form():
 
 @application.route('/', methods=['POST'])
 def my_form_post():
-
-    text = request.form['text']
-    x = calculator.calculate(float(text))
-    return "Carbon footprint: %.2f kg CO2/day" %x
+    questionnaire = {}
+    questionnaire["driving"] = request.form["driving"]
+    questionnaire["diet"] = request.form["diet"]
+    score = calculator.calculate(questionnaire)
+    return "Carbon footprint: %.2f kg CO2/day" %score
 
 if __name__ == "__main__":
      application.run(host='0.0.0.0')
