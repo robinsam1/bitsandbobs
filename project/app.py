@@ -12,7 +12,7 @@ def my_form_post():
 
     text = request.form['text']
     x = calculator.calculate(float(text))
-    return "%.2f" %x
+    return "Carbon footprint: %.2f kg CO2/day" %x
 
 if __name__ == "__main__":
      application.run(host='0.0.0.0')
