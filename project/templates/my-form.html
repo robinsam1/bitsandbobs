@@ -2,10 +2,18 @@
 <html lang="en">
 <body>
     <h1>Carbon footprint calculator</h1>
-    <h2>Complete form for a daily carbon footprint</h2>
+    <h2>Complete the form for your daily carbon footprint</h2>
     <form action="." method="POST">
-        <b>Driving distance</b> (km):
-	<input type="text" name="driving">
+	<b>Main method of transport</b>:
+	<select name="transport">
+		<option value="auto">Car</option>
+		<option value="bus">Bus</option>
+		<option value="subway">Subway</option>
+		<option value="self">Walk/bike</option>
+	</select>
+	<br />
+        <b>Commute distance</b> (km):
+	<input type="number" name="commute" step=".1">
 	<br />
         <b>Diet type</b>: 
 	<select name="diet">

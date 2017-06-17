@@ -4,8 +4,14 @@ class calculator(object):
 
 	def calculate(self, answers):
 		score = 10.0
-		if "driving" in answers:
-			score+=(float(answers["driving"]) * .250)
+		if "commute" in answers and "transport" in answers:
+			distance=float(answers["commute"])
+			if answers["transport"] == "auto":
+				score+=(distance *.250)
+			elif answers["transport"] == "bus":
+				score+=(distance *.1)
+			elif answers["transport"] == "subway":
+				score+=(distance *.05)
 		if "diet" in answers:
 			if answers["diet"] == "meat":
 				score+=4.0
