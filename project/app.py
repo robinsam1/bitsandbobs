@@ -10,7 +10,8 @@ def my_form():
 @application.route('/', methods=['POST'])
 def my_form_post():
     questionnaire = {}
-    questionnaire["driving"] = request.form["driving"]
+    if request.form["driving"]:
+    	questionnaire["driving"] = request.form["driving"]
     questionnaire["diet"] = request.form["diet"]
     score = calculator.calculate(questionnaire)
     return "Carbon footprint: %.2f kg CO2/day" %score
