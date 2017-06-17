@@ -15,7 +15,9 @@ def my_form_post():
     questionnaire["transport"] = request.form["transport"]
     questionnaire["diet"] = request.form["diet"]
     score = calculator.calculate(questionnaire)
-    return "Carbon footprint: %.2f kg CO2/day" %score
+    output = "%.2f" %score
+    #return "Carbon footprint: " + output
+    return render_template("output.html", output=output)
 
 if __name__ == "__main__":
      application.run(host='0.0.0.0')
