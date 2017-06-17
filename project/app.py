@@ -6,7 +6,8 @@ application = Flask(__name__)
 @application.route('/')
 def showMachineList():
      #return render_template('list.html')
-     x = calculator.calculate(0)
+     input = raw_input("Choose a number")
+     x = calculator.calculate(input)
      return "%.2f" %x
 
 if __name__ == "__main__":

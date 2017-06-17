@@ -5,4 +5,6 @@ class calculator(object):
 	def calculate(self, answers):
 		score = 10.0
 		#for answer in answers:
+		#	score+=answer
+		score+=float(answers)
 		return score
