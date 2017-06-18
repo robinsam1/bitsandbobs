@@ -35,4 +35,8 @@ class calculator(object):
 			elif answers["flights"] == "longhaul":
 				flightdistance = 5000 * returntrip * flightfrequency
 			score += (flightdistance * flightimpact)/365
+		if "clothing" in answers:
+			clothingimpact = 0.5
+			newclothes = float(answers["clothing"])
+			score += 0.5 * newclothes
 		return score
