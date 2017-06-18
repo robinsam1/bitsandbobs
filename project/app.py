@@ -14,6 +14,9 @@ def my_form_post():
     	questionnaire["commute"] = request.form["commute"]
     questionnaire["transport"] = request.form["transport"]
     questionnaire["diet"] = request.form["diet"]
+    questionnaire["flights"] = request.form["flights"]
+    if request.form["flightfrequency"]:
+    	questionnaire["flightfrequency"] = request.form["flightfrequency"]
     score = calculator.calculate(questionnaire)
     output = "%.2f" %score
     #return "Carbon footprint: " + output
