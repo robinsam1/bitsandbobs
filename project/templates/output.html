@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<script src="static/js/angular.js"></script>
 <body>
 	<h1>Your carbon footprint</h1>
 	<br />
@@ -9,14 +10,25 @@
   	{% endif %}
 	<br />
 	<h2>By comparison here is the per capita environmental impact of certain nations</h2>
-	China: 12.5 kg CO2/day
-	<br />
-	United States: 54.2 kg CO2/day
-	<br />
-	Germany: 28.5 kg CO2/day
-	<br />
-	United Kingdom: 26.5 kg CO2/day
-	<br />
-	Canada: 51.5 kg CO2/day
+	<div ng-app="Application" ng-init="countries=[
+	{country:'China',emissions:'12.5'},
+	{country:'United States',emissions:'54.2'},
+	{country:'Germany',emissions:'28.5'},
+	{country:'United Kingdom',emissions:'26.5'},
+	{country:'Canada',emissions:'51.5'}]">
+			<ul>
+				<div ng-repeat='x in countries'>
+					{a x.country + ': ' + x.emissions + ' kg CO2/day' a}
+				</div>
+			</ul>
+	</div>
+	<script>
+	var app = angular.module('Application', []);
+
+	app.config(['$interpolateProvider', function($interpolateProvider) {
+  	$interpolateProvider.startSymbol('{a');
+  	$interpolateProvider.endSymbol('a}');
+	}]);
+	</script>
 </body>
 </html>
